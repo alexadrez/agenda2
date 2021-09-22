@@ -22,6 +22,7 @@ urlpatterns = [
     path('agenda/', views.lista_eventos),
     path('agenda/eventos/', views.eventos),
     path('agenda/eventos/submit', views.submit_eventos),
+    path('agenda/eventos/delete/<int:id_eventos>/', views.delete_eventos),
     path('', views.index),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
