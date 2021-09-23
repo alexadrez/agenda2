@@ -3,6 +3,7 @@ from core.models import Evento
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from datetime import datetime
 # Create your views here.
 def index(request):
     return redirect('/agenda/')
@@ -32,6 +33,7 @@ def lista_eventos(request):
     # evento = Evento.objects.all()
     # dados = {'eventos':evento}
     # return (request, 'agenda.html',dados)
+    data_atual = datetime.now()
     usuario = request.user
     evento = Evento.objects.filter(usuario=usuario)
     #evento = Evento.objects.all()
